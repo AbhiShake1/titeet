@@ -49,3 +49,4 @@ export function carTable<
     extraConfig && (c => extraConfig({ ...extraColumns, ...c })),
   );
 }
+
