@@ -15,7 +15,16 @@
     "preserveWatchOutput": true,
     "skipLibCheck": true,
     "strict": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "noEmit": true,
+    "module": "esnext",
+    "resolveJsonModule": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "noUncheckedIndexedAccess": true,
+    "paths": {
+      "~/*": ["./src/*"]
+    }
   },
   "exclude": ["node_modules"]
 }
