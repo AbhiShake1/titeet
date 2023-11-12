@@ -27,7 +27,8 @@ export const cars = carTable(
   },
   (t) => ({
     nameIndex: index("model_idx").on(t.model),
-    manufacturerInddex: index("manufacturer_idx").on(t.manufacturer),
+		manufacturerInddex: index("manufacturer_idx").on(t.manufacturer),
   })
 );
 
+	
