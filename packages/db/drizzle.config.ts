@@ -8,5 +8,5 @@ export default {
   dbCredentials: {
     connectionString: process.env.DATABASE_URL ?? "",
   },
-  tablesFilter: ["car_*"],
+  tablesFilter: ["horn_*"],
 } satisfies Config;

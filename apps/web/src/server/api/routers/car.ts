@@ -7,11 +7,6 @@ import { createTRPCCrudRouter } from "../base/crud-router";
 export const postRouter = createTRPCCrudRouter({
   table: cars,
   extend: {
-    create: publicProcedure
-      .input(z.object({ name: z.string() }))
-      .mutation(({ ctx, input }) => {
-        return ctx.db.insert(cars).values(input)
-      }),
     hello: publicProcedure
       .input(z.object({ text: z.string() }))
       .query(({ input }) => {
