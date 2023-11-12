@@ -30,3 +30,4 @@ export const cars = carTable(
     manufacturerInddex: index("manufacturer_idx").on(t.manufacturer),
   })
 );
+
