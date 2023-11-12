@@ -7,7 +7,7 @@ import { MySqlColumnBuilderBase, mysqlTableCreator, MySqlTableExtraConfig, times
  *
  * @see https://orm.drizzle.team/docs/goodies#multi-project-schema
  */
-const mysqlTable = mysqlTableCreator((name) => `car_${name}`);
+const mysqlTable = mysqlTableCreator((name) => `horn_${name}`);
 
 const extraColumns = {
   id: varchar("id", { length: 191 })
