@@ -1,0 +1,7 @@
+{
+  "extends": "@car/tsconfig/base.json",
+  "compilerOptions": {
+    "baseUrl": "./src/"
+  },
+  "include": ["."]
+}

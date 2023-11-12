@@ -11,6 +11,8 @@
   "dependencies": {
     "@car/api": "workspace:packages/api",
     "@car/db": "workspace:packages/db",
+    "@car/hooks": "workspace:packages/hooks",
+    "@car/ui": "workspace:packages/ui",
     "@car/tailwind-config": "workspace:packages/tailwind-config",
     "@t3-oss/env-nextjs": "^0.7.0",
     "@tanstack/react-query": "^4.32.6",
