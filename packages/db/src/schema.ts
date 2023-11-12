@@ -1,7 +1,11 @@
 // Example model schema from the Drizzle docs
 // https://orm.drizzle.team/docs/sql-schema-declaration
 import {
-  index, varchar,
+  index,
+  tinyint,
+  varchar,
+  int,
+  text,
 } from "drizzle-orm/mysql-core";
 import { carTable } from "./helpers/car-table";
 
@@ -11,12 +15,18 @@ export type CarTable =
   | typeof cars
 
 export const cars = carTable(
-  "post",
+  "car",
   {
-    name: varchar("name", { length: 256 }),
+    price: int("price"),
+    mileage: tinyint("mileage"),
+    year: int("year"),
+    manufacturer: varchar("manufacturer", { length: 90 }),
+    model: varchar("model", { length: 90 }),
+    color: varchar("color", { length: 30 }),
+    imageUrl: text("image_url"),
   },
   (t) => ({
-    nameIndex: index("name_idx").on(t.name),
+    nameIndex: index("model_idx").on(t.model),
+    manufacturerInddex: index("manufacturer_idx").on(t.manufacturer),
   })
 );
-
