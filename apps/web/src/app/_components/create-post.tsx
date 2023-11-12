@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { clientApi } from "~/trpc/react";
+import { CarLoadingSkeleton } from "@car/ui";
 
 export function CreatePost() {
   const router = useRouter();
@@ -15,18 +16,20 @@ export function CreatePost() {
     },
   });
 
+  return <CarLoadingSkeleton />
+
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
-				createPost.mutate({
+        createPost.mutate({
           model,
           year: 2000,
           color: "red",
           price: 40000000,
-					mileage: 12,
-					imageUrl: "",
-					manufacturer: "tesla",
+          mileage: 12,
+          imageUrl: "",
+          manufacturer: "tesla",
         });
       }}
       className="flex flex-col gap-2"
