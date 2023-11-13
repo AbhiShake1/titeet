@@ -18,7 +18,7 @@ export const generateStaticParams = async () => {
 }
 
 const Page = async ({ params: { id } }: Props) => {
-  const { model, price, imageUrl } = (await api.car.findOne.query({ id })) ?? {}
+  const { model, price, imageUrl } = await api.car.findOne.query({ id })
 
   return <div className='flex flex-col space-y-8 mx-4 mt-12'>
     <div className='flex flex-row justify-between'>
