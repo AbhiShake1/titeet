@@ -18,6 +18,7 @@ export const cars = carTable(
   "car",
   {
     price: int("price"),
+    year: int("year"),
     mileage: tinyint("mileage"),
     manufacturer: varchar("manufacturer", { length: 90 }),
     model: varchar("model", { length: 90 }),

@@ -1,5 +1,5 @@
 {
-  "extends": "@car/tsconfig/react-library.json",
+  "extends": "@car/tsconfig/base.json",
   "compilerOptions": {
     "baseUrl": "./src/"
   },
