@@ -27,7 +27,9 @@ export function createTRPCCrudRouter<TAccessor extends ProcedureRouterRecord>({
       .input(findWithId)
       .query(async ({ ctx, input: { id } }) => {
         const cars = await ctx.db.select().from(table).where(eq(table.id, id)).limit(1);
-        return cars[0];
+        const car = cars[0];
+        if (!car) throw new Error("Not found");
+        return car;
       }),
     findAll: procedure
       .query(({ ctx }) => {
