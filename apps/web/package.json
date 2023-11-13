@@ -4,24 +4,25 @@
   "private": true,
   "scripts": {
     "build": "next build",
+    "clean": "rm -rf node_modules .next",
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start"
   },
   "dependencies": {
-    "@car/api": "workspace:packages/api",
-    "@car/db": "workspace:packages/db",
-    "@car/hooks": "workspace:packages/hooks",
-    "@car/ui": "workspace:packages/ui",
-    "@car/utils": "workspace:packages/utils",
-    "@car/tailwind-config": "workspace:packages/tailwind-config",
+    "@car/api": "workspace:*",
+    "@car/db": "workspace:*",
+    "@car/hooks": "workspace:*",
+    "@car/ui": "workspace:*",
+    "@car/utils": "workspace:*",
+    "@car/tailwind-config": "workspace:*",
     "@t3-oss/env-nextjs": "^0.7.0",
     "@tanstack/react-query": "^4.32.6",
     "@trpc/client": "^10.37.1",
     "@trpc/next": "^10.37.1",
     "@trpc/react-query": "^10.37.1",
     "@trpc/server": "^10.37.1",
-    "next": "^14.0.0",
+    "next": "^14.0.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "superjson": "^1.13.1",
@@ -30,7 +31,7 @@
   "devDependencies": {
     "@car/tsconfig": "workspace:*",
     "@types/eslint": "^8.44.2",
-    "@types/node": "^18.16.0",
+    "@types/node": "^20.9.0",
     "@types/react": "^18.2.33",
     "@types/react-dom": "^18.2.14",
     "@typescript-eslint/eslint-plugin": "^6.3.0",
@@ -45,7 +46,7 @@
     "prettier-plugin-tailwindcss": "^0.5.1",
     "tailwindcss": "^3.3.3",
     "tailwindcss-animate": "^1.0.7",
-    "typescript": "^5.1.6"
+    "typescript": "^5.2.2"
   },
   "ct3aMetadata": {
     "initVersion": "7.23.1"

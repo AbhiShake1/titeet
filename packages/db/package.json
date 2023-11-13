@@ -5,6 +5,7 @@
   "types": "./src/index.ts",
   "license": "MIT",
   "scripts": {
+    "clean": "rm -rf node_modules",
     "db:push": "dotenv drizzle-kit push:mysql",
     "db:studio": "dotenv drizzle-kit studio",
     "lint": "eslint ."
@@ -19,6 +20,6 @@
     "@car/eslint-config": "workspace:*",
     "@car/tsconfig": "workspace:*",
     "react": "^18.2.0",
-    "typescript": "^4.5.2"
+    "typescript": "^5.2.2"
   }
 }

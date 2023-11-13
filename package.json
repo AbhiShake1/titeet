@@ -2,6 +2,7 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
+    "clean": "turbo run clean ; rm -rf bun.lockb node_modules",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
@@ -14,7 +15,7 @@
     "turbo": "latest"
   },
   "name": "titeet",
-  "packageManager": "bun@1.0.11",
+  "packageManager": "bun@latest",
   "workspaces": [
     "apps/*",
     "packages/*"

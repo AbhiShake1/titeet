@@ -1,5 +1,4 @@
 {
-  "extends": "@car/tsconfig/react-library.json",
-  "include": ["."],
-  "exclude": ["dist", "build", "node_modules"]
+  "extends": "@car/tsconfig/nextjs.json",
+  "include": ["src"]
 }
