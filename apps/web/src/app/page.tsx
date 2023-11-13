@@ -1,65 +1,47 @@
-import Link from "next/link";
+import { InfoCard, Button } from "@car/ui";
+import React from "react";
+import { Metadata } from "next";
 
-import { CreatePost } from "~/app/_components/create-post";
-import { api } from "~/trpc/server";
+export const metadata: Metadata = {
+  title: 'TeeTeet',
+  description: 'TeeTeet Buy, Sell, Resell, Car',
+}
 
-export default async function Home() {
-  const hello = await api.post.hello.query({ text: "from tRPC" });
-
+const Index = async () => {
+  // const [coords, setCoords] = useState<GeolocationCoordinates | null>(null)
+  //
+  // useEffect(() => {
+  //     navigator.geolocation.watchPosition(({coords}) => {
+  //         setCoords(coords)
+  //     })
+  //     return () => navigator.geolocation.clearWatch(1)
+  // }, [])
+  // bg-[url(/bg.png)]
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-      <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 ">
-        <h1 className="text-5xl font-extrabold tracking-tight sm:text-[5rem]">
-          Create <span className="text-[hsl(280,100%,70%)]">T3</span> App
-        </h1>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
-          <Link
-            className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 hover:bg-white/20"
-            href="https://create.t3.gg/en/usage/first-steps"
-            target="_blank"
-          >
-            <h3 className="text-2xl font-bold">First Steps →</h3>
-            <div className="text-lg">
-              Just the basics - Everything you need to know to set up your
-              database and authentication.
-            </div>
-          </Link>
-          <Link
-            className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 hover:bg-white/20"
-            href="https://create.t3.gg/en/introduction"
-            target="_blank"
-          >
-            <h3 className="text-2xl font-bold">Documentation →</h3>
-            <div className="text-lg">
-              Learn more about Create T3 App, the libraries it uses, and how to
-              deploy it.
-            </div>
-          </Link>
+    <main
+      className='flex flex-col items-start p-16 bg-cover bg-no-repeat mix-blend-difference h-[90vh]'>
+      <div className='max-w-[40vw] space-y-4'>
+        <h3 className="scroll-m-20 text-4xl font-extrabold tracking-wide lg:text-5xl lg:leading-snug leading-snug">
+          Your ultimate destination to find affordable cars!
+        </h3>
+        <h3 className="scroll-m-20 text-2xl font-semibold text-muted-foreground leading-snug">
+          Embrace Value and Variety - Explore an Array of Pre-Owned Cars with Distinctive Features!
+        </h3>
+        <div className='flex flex-row space-x-8 pt-8'>
+          <Button size='lg'>Buy Now</Button>
+          <Button size='lg' className='scale-110' variant='outline'>Explore</Button>
         </div>
-        <div className="flex flex-col items-center gap-2">
-          <p className="text-2xl text-white">
-            {hello ? hello.greeting : "Loading tRPC query..."}
-          </p>
-        </div>
-
-        <CrudShowcase />
       </div>
+      <div className='flex-1' />
+      <div className='w-full flex flex-col items-end justify-end'>
+        <div className='flex-shrink md:hidden lg:block'>
+          <InfoCard />
+        </div>
+      </div>
+      {/*{coords?.latitude} {coords?.longitude}*/}
+      {/*<CreateAccountForm/>*/}
     </main>
   );
 }
 
-async function CrudShowcase() {
-  const latestPost = await api.post.getLatest.query();
-
-  return (
-    <div className="w-full max-w-xs">
-      {latestPost ? (
-        <p className="truncate">Your most recent post: {latestPost.model}</p>
-      ) : (
-        <p>You have no posts yet.</p>
-      )}
-
-      <CreatePost />
-    </div>
-  );
-}
+export default Index

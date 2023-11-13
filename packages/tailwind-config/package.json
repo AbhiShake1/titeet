@@ -7,8 +7,10 @@
     "index.js",
     "postcss.js"
   ],
+  "scripts": {
+    "clean": "rm -rf node_modules"
+  },
   "devDependencies": {
-    "@car/tsconfig": "workspace:*",
     "autoprefixer": "^10.4.15",
     "postcss": "^8.4.27",
     "tailwindcss": "^3.3.3"
